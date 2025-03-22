@@ -1,0 +1,447 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merienda:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Yuji+Mai&display=swap');
+ *{
+    /* border:  1px solid red; */
+    font-family:"Roboto Mono", monospace;
+ }
+ /* From Uiverse.io by Javierrocadev */ 
+.card {
+  background: #ffffff;
+  color: #073b4c;
+  font-weight: 600;
+  padding: 15px;
+  position: relative;
+  transition: all .5s ease;
+}
+.price-badge::before {
+  content: attr(data-price);
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  top: 0;
+  right: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #ef476f;
+  color: aliceblue;
+  font-weight: 800;
+  transition: all 0.5s ease;
+}
+
+
+.card__image {
+   transition: all .5s ease;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 1.4em;
+  margin-top: 20px;
+}
+
+.card:hover {
+  border-top-left-radius: 35px;
+  box-shadow: 5px 5px 0px 0px #06d6a0, 10px 10px 0px 0px #118ab2, 15px 15px 0px 0px #06d6a0, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.card:hover .card__image {
+  border-top-left-radius: 25px;
+}
+
+.card:hover::before {
+  transform: scale(1.3) rotate(-30deg);
+}
+
+ /* From Uiverse.io by vinodjangid07 */ 
+.loader {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+ 
+ .truckWrapper {
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   align-items: center;
+   justify-content: flex-end;
+   overflow-x: hidden;
+ }
+ /* truck upper body */
+ .truckBody {
+   width: 130px;
+   height: fit-content;
+   margin-bottom: 6px;
+   animation: motion 1s linear infinite;
+ }
+ /* truck suspension animation*/
+ @keyframes motion {
+   0% {
+     transform: translateY(0px);
+   }
+   50% {
+     transform: translateY(3px);
+   }
+   100% {
+     transform: translateY(0px);
+   }
+ }
+ /* truck's tires */
+ .truckTires {
+   width: 130px;
+   height: fit-content;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0px 10px 0px 15px;
+   position: absolute;
+   bottom: 0;
+ }
+ .truckTires svg {
+   width: 24px;
+ }
+ 
+ .road {
+   width: 100%;
+   height: 1.5px;
+   background-color: #282828;
+   position: relative;
+   bottom: 0;
+   align-self: flex-end;
+   border-radius: 3px;
+ }
+ .road::before {
+   content: "";
+   position: absolute;
+   width: 20px;
+   height: 100%;
+   background-color: #282828;
+   right: -50%;
+   border-radius: 3px;
+   animation: roadAnimation 1.4s linear infinite;
+   border-left: 10px solid white;
+ }
+ .road::after {
+   content: "";
+   position: absolute;
+   width: 10px;
+   height: 100%;
+   background-color: #282828;
+   right: -65%;
+   border-radius: 3px;
+   animation: roadAnimation 1.4s linear infinite;
+   border-left: 4px solid white;
+ }
+ 
+ .lampPost {
+   position: absolute;
+   bottom: 0;
+   right: -90%;
+   height: 90px;
+   animation: roadAnimation 1.4s linear infinite;
+ }
+ 
+ @keyframes roadAnimation {
+   0% {
+     transform: translateX(0px);
+   }
+   100% {
+     transform: translateX(-700px);
+   }
+ }
+ /* From Uiverse.io by dldrs */ 
+button {
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0px;
+  border: none;
+  background-color: hsl(255deg 50% 40%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  font-family: "Inter", sans-serif;
+}
+
+.default-btn {
+  background-image: linear-gradient(
+    90.1deg,
+    rgb(140, 131, 212) 0.2%,
+    rgb(52, 28, 126) 99.9%
+  );
+}
+
+.default-btn,
+.hover-btn {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 1em 3em;
+  border-radius: 0px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.hover-btn {
+  position: absolute;
+  inset: 0;
+  font-size: 20px;
+ 
+  text-align: center;
+  background: rgb(26, 35, 126);
+  background: linear-gradient(
+    63deg,
+    rgba(26, 35, 126, 1) 0%,
+    rgba(69, 39, 160, 1) 100%
+  );
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  transform: translate(0%, 100%);
+}
+
+.default-btn span {
+  color: hsl(0, 0%, 100%);
+}
+
+.hover-btn span {
+  color: hsl(0, 0%, 100%);
+}
+
+button:hover .default-btn {
+  transform: translate(0%, -100%);
+}
+
+button:hover .hover-btn {
+  transform: translate(0%, 0%);
+}
+/* From Uiverse.io by zanina-yassine */ 
+
+
+.card {
+  background: #FFFFFF;
+  box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  border-bottom: 1px solid #efeff3;
+  font-weight: 700;
+  font-size: 11px;
+  color: #63656b;
+}
+
+/* cart */
+.cart {
+  border-radius: 19px 19px 7px 7px;
+}
+
+.cart .products {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.cart .products .product {
+  display: grid;
+  grid-template-columns: 60px 1fr 80px 1fr;
+  gap: 10px;
+}
+
+.cart .products .product span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #47484b;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.cart .products .product p {
+  font-size: 11px;
+  font-weight: 600;
+  color: #7a7c81;
+}
+
+.cart .quantity {
+  height: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: auto;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 7px;
+  filter: drop-shadow(0px 1px 0px #efefef)
+    drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+}
+
+.cart .quantity label {
+  width: 20px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #47484b;
+}
+
+.cart .quantity button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  padding-bottom: 2px;
+}
+
+.card .small {
+  font-size: 15px;
+  margin: 0 0 auto auto;
+}
+
+.card .small sup {
+  font-size: px;
+}
+
+/* coupons */
+.coupons {
+  border-radius: 7px;
+}
+
+.coupons form {
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  gap: 10px;
+  padding: 10px;
+}
+
+.input_field {
+  width: auto;
+  height: 36px;
+  padding: 0 0 0 12px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #e5e5e5;
+  filter: drop-shadow(0px 1px 0px #efefef)
+    drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.input_field:focus {
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 0px 2px #242424;
+  background-color: transparent;
+}
+
+.coupons form button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 18px;
+  gap: 10px;
+  width: 100%;
+  height: 36px;
+  background: linear-gradient(180deg, #4480FF 0%, #115DFC 50%, #0550ED 100%);
+  box-shadow: 0px 0.5px 0.5px #EFEFEF, 0px 1px 0.5px rgba(239, 239, 239, 0.5);
+  border-radius: 5px;
+  border: 0;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ffffff;
+}
+
+/* Checkout */
+.checkout {
+  border-radius: 9px 9px 19px 19px;
+}
+
+.checkout .details {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 10px;
+  gap: 5px;
+}
+
+.checkout .details span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.checkout .details span:nth-child(odd) {
+  font-size: 11px;
+  font-weight: 700;
+  color: #707175;
+  margin: auto auto auto 0;
+}
+
+.checkout .details span:nth-child(even) {
+  font-size: 13px;
+  font-weight: 600;
+  color: #47484b;
+  margin: auto 0 auto auto;
+}
+
+.checkout .checkout--footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px 10px 20px;
+  background-color: #efeff3;
+}
+
+.price {
+  position: relative;
+  font-size: 22px;
+  color: #2B2B2F;
+  font-weight: 900;
+}
+
+.price sup {
+  font-size: 13px;
+}
+
+.price sub {
+  width: fit-content;
+  position: absolute;
+  font-size: 11px;
+  color: #5F5D6B;
+  bottom: 5px;
+  display: inline-block;
+}
+
+.checkout .checkout-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 36px;
+  background: linear-gradient(180deg, #4480FF 0%, #115DFC 50%, #0550ED 100%);
+  box-shadow: 0px 0.5px 0.5px #EFEFEF, 0px 1px 0.5px rgba(239, 239, 239, 0.5);
+  border-radius: 7px;
+  border: 0;
+  outline: none;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
