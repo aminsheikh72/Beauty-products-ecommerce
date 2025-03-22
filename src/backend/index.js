@@ -5,7 +5,7 @@ const app = express();
 
 // ✅ CORS Enable for Specific Frontend
 app.use(cors({
-  origin: "https://your-frontend.vercel.app", // Yahan apni frontend website ka URL daalo
+  origin: "https://beauty-products-psi.vercel.app/", // Yahan apni frontend website ka URL daalo
   methods: "GET, POST, PUT, DELETE",
   credentials: true
 }));
